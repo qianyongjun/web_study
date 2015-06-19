@@ -1,23 +1,21 @@
 /***********通过gulp载入外挂转义生成文件******************/
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),/*编译Sass*/
-    autoprefixer = require('gulp-autoprefixer'),/*Autoprefixer*/
     minifycss = require('gulp-minify-css'),/*缩小化(minify)CSS*/
     jshint = require('gulp-jshint'),/*JSHint*/
-    uglify = require('gulp-uglify'),/*丑化(Uglify)*/
+    uglify = require('gulp-uglify'),/*压缩(Uglify)*/
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),/*文件清理*/
     concat = require('gulp-concat'),/*拼接*/
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    livereload = require('gulp-livereload');/*即时重整(LiveReload)需要依靠浏览器插件*/
-    browserSync = require('browser-sync'),/*即使刷新*/
+    browserSync = require('browser-sync')/*即使刷新*/
 
 
 
 /***************** configuration *****************/
-
-var serveConfig = {                   /*定义刷新来源文件*/
+ /*定义刷新来源文件*/
+var serveConfig = {
     files: [
         'src/*.html',
         'src/css/*.css',
@@ -52,16 +50,16 @@ gulp.task('styles', function() {
 /*****************脚本编译*************************/
 gulp.task('scripts', function() {
   return gulp.src('src/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
+    .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/js'))
+    .pipe(concat('main.js'))/*合并所有js到min.js*/
+    .pipe(gulp.dest('dist/js'))/*输出合并后文件位置*/
+    .pipe(rename({ suffix: '.min' }))/*rename压缩后的文件名*/
+    .pipe(uglify())/*执行压缩*/
+    .pipe(gulp.dest('dist/js'))/*输出压缩后文件位置*/
     .pipe(notify({ message: 'scripts task complete' }));
 });
-
+gulp.task('default', ['scripts', 'watch']);
 
 /*****************清除目的目录重建档案**********/
 gulp.task('clean', function() {
