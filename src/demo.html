@@ -1,36 +1,131 @@
 <!doctype html>
 <html lang="en">
 <meta charset="utf-8" />
+<link href="/dist/css/main.css" rel="stylesheet" type="text/css">
+<style>
+*{margin:0;padding:0;}
+html{font-size:62.5%;}
+ul{margin:40px auto;width:244px;height:246px;position:relative;}
+li{list-style-type:none;position:absolute;top:0;left:0;border:6px solid #dedede;box-shadow:2px -2px 3px #333;}
+li.odd{
+	animation:moveLeft 1s linear forwards;
+	-webkit-animation:moveLeft 1s linear forwards;
+}
+li.even{
+	animation:moveRight 1s linear forwards;
+	-webkit-animation:moveRight 1s linear forwards;
+} */
+@keyframes moveLeft{
+	from{
+		transform:translate(0,0) rotate(0) scale(1,1);
+		opacity:1;
+	}
+	to{
+		transform:translate(-50px,-40px) rotate(-90deg) scale(0.5,0.5);
+		opacity:0;
+	}
+}
+@-webkit-keyframes moveLeft{
+	from{
+		transform:translate(0,0) rotate(0) scale(1,1);
+		opacity:1;
+	}
+	to{
+		transform:translate(-50px,-40px) rotate(-90deg) scale(0.5,0.5);
+		opacity:0;
+	}
+}
+@keyframes moveRight{
+	from{
+		transform:translate(0,0) rotate(0) scale(1,1);
+		opacity:1;
+	}
+	to{
+		transform:translate(50px,-40px) rotate(90deg) scale(0.5,0.5);
+		opacity:0;
+	}
+}
+@-webkit-keyframes moveRight{
+	from{
+		transform:translate(0,0) rotate(0) scale(1,1);
+		opacity:1;
+	}
+	to{
+		transform:translate(50px,-40px) rotate(90deg) scale(0.5,0.5);
+		opacity:0;
+	}
+}
+
+</style>
 <script type="text/javascript">
+	i=0;
+	function changePic(){
+		var li=document.getElementsByTagName('li');
+		var b=li.length;
+		if(b>0){
+			i++;
+			console.log(i)
+			if((b-i)%2==0){
+				li[b-i].setAttribute('class','odd');
+			}
+			else{
+				li[b-i].setAttribute('class','even');
+			}
+		}
+		else{
+			return;
+		}
+	}
+
+	function movePic(e){
+		var num=0;
+		if(e.which==1){
+			var t=setInterval(function(){
+				num+=10;
+				/*if(num==1000){
+					num==0;
+					var q=setInterval(function(){
+						var li=document.getElementsByTagName('li');
+						var b=li.length;
+						if(b>0){
+							i++;
+							console.log(i)
+							if((b-i)%2==0){
+								li[b-i].setAttribute('class','odd');
+							}
+							else{
+								li[b-i].setAttribute('class','even');
+							}
+						}
+					},100)
+				}*/
+			},10)
+		}
+	}
 </script>
 <body>
-
-
-<form action="">
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<label for=""><input type="text"></label>
-	<div>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p><em><a href=""></a></em></p>
-		<p></p>
-	</div>
-</form>
-
-
-
-
-
+	<ul onclick="changePic()" onmousedown="movePic(event)" onmouseup="" id="list">
+		<li><img src="images/1.jpg" /></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+	</ul>
 </body>
 </html>
