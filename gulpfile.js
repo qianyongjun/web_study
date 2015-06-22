@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),/*文件清理*/
     concat = require('gulp-concat'),/*拼接*/
     notify = require('gulp-notify'),
-    autoprefixer = require('gulp-autoprefixer'),
+/*    autoprefixer = require('gulp-autoprefixer'),*/
     cache = require('gulp-cache'),
     browserSync = require('browser-sync')/*即使刷新*/
     runSequence = require('run-sequence')
@@ -41,11 +41,11 @@ gulp.task('browser-sync', function () {
 gulp.task('styles', function() {
   return gulp.src('src/sass/*')/**定义来源档案**/
     .pipe(sass({ style: 'expanded' }))/**定义sass输出格式**/
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('dist/css'))/*gulp.destAPI设定目的路径*/
+/*    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))*/
+    .pipe(gulp.dest('src/dist/css'))/*gulp.destAPI设定目的路径*/
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('src/dist/css'))
     .pipe(notify({ message: 'styles task complete' }));
 });
 gulp.task('default', ['styles', 'watch']);
@@ -57,10 +57,10 @@ gulp.task('scripts', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))/*合并所有js到min.js*/
-    .pipe(gulp.dest('dist/js'))/*输出合并后文件位置*/
+    .pipe(gulp.dest('src/dist/js'))/*输出合并后文件位置*/
     .pipe(rename({ suffix: '.min' }))/*rename压缩后的文件名*/
     .pipe(uglify())/*执行压缩*/
-    .pipe(gulp.dest('dist/js'))/*输出压缩后文件位置*/
+    .pipe(gulp.dest('src/dist/js'))/*输出压缩后文件位置*/
     .pipe(notify({ message: 'scripts task complete' }));
 });
 gulp.task('default', ['scripts', 'watch']);
