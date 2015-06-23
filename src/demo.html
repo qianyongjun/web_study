@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
+<head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=yes"><!--指定网页中手机号码显示是否为超链接,当前为不是超链接-->
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 网站开启对web app程序的支持。-->
+<meta name="apple-mobile-web-app-status-bar-style" content="default" /><!-- 在web app应用下状态条（屏幕顶部条）的颜色-->
 <link href="/dist/css/main.css" rel="stylesheet" type="text/css">
+<link src="/dist/js/main.min.js" type="text/javascript">
 <style>
 *{margin:0;padding:0;}
 html{font-size:62.5%;}
@@ -57,52 +63,7 @@ li.even{
 }
 
 </style>
-<script type="text/javascript">
-	i=0;
-	function changePic(){
-		var li=document.getElementsByTagName('li');
-		var b=li.length;
-		if(b>0){
-			i++;
-			console.log(i)
-			if((b-i)%2==0){
-				li[b-i].setAttribute('class','odd');
-			}
-			else{
-				li[b-i].setAttribute('class','even');
-			}
-		}
-		else{
-			return;
-		}
-	}
-
-	function movePic(e){
-		var num=0;
-		if(e.which==1){
-			var t=setInterval(function(){
-				num+=10;
-				/*if(num==1000){
-					num==0;
-					var q=setInterval(function(){
-						var li=document.getElementsByTagName('li');
-						var b=li.length;
-						if(b>0){
-							i++;
-							console.log(i)
-							if((b-i)%2==0){
-								li[b-i].setAttribute('class','odd');
-							}
-							else{
-								li[b-i].setAttribute('class','even');
-							}
-						}
-					},100)
-				}*/
-			},10)
-		}
-	}
-</script>
+</head>
 <body>
 	<ul onclick="changePic()" onmousedown="movePic(event)" onmouseup="" id="list">
 		<li><img src="images/1.jpg" /></li>

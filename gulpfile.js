@@ -39,8 +39,7 @@ gulp.task('browser-sync', function () {
 
 /*****************编译Sass，Autoprefix及缩小化**********/
 gulp.task('styles', function() {
-  return gulp.src('src/sass/*')/**定义来源档案**/
-    .pipe(sass({ style: 'expanded' }))/**定义sass输出格式**/
+  return sass('src/sass/*',{style:'expanded'})/**定义来源档案**/
 /*    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))*/
     .pipe(gulp.dest('src/dist/css'))/*gulp.destAPI设定目的路径*/
     .pipe(rename({suffix: '.min'}))
@@ -84,5 +83,5 @@ gulp.task('watch', function() {
 
 /******************  task  *********************/
 gulp.task('default',function(){
-    runSequence('clean','browser-sync','scripts','watch')
+    runSequence('clean','browser-sync','styles','scripts','watch')
 });  //顺序尽量和watch一致，且要html在css前
