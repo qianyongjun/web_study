@@ -1,0 +1,212 @@
+@charset "utf-8"
+html
+	font-size 12px
+	font-family '微软雅黑','Arial','sns-serif'
+ul,ol,li,dl,dt,dd
+	list-style-type none
+a
+	text-decoration none
+body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,input,img,table
+		margin 0
+		padding 0
+body
+	font-size 12px
+	background-color #fff
+	color #4d678d
+	text-align center
+.fl
+	float left
+::-webkit-scrollbar
+	width 8px
+	height 3px
+::-webkit-scrollbar-thumb
+	height 50px
+	background-color #bbb
+	-webkit-border-radius 4px
+div.fixed-top
+	position fixed
+	top 0
+.header
+	height 50px
+	overflow visiable
+	width 100%
+	.header-wrap
+		background-color #f0efed
+		padding 8px 20px 6px 40px
+		height 50px
+		line-height 50px
+		vertical-align middle
+		border-bottom 0
+		box-shadow 0 0 10px rgba(207,207,207,77)
+		box-sizing border-box
+		a
+			color #4d678d
+			span.nav-logo
+				line-height 50px
+			span.nav-title
+				display inline-block
+				font-size 10px
+				height 36px
+				line-height 45px
+				padding-left 15px
+@media screen and (max-width:768px)
+	.icon-common
+		background url('../images/dida@768.png') no-repeat
+		background-size 285px 215px
+		display inline-block
+	.header
+		.header-wrap
+			padding 5px 20px 6px 20px
+			a
+				span.nav-logo
+					.icon-logo
+						background-position 0 -190px
+						width 93px
+						height 25px
+						vertical-align text-bottom
+			a.btn-nav
+				float right
+				line-height 44px
+				.icon-toggle
+					width 16px
+					height 13px
+					background-position -265px -60px
+			div.nav-collapse
+				display none
+				position absolute
+				top 50px
+				right 0
+				background-color #f0efed
+				opacity 0.8
+				ul.nav-list
+					line-height 40px
+					.list-link
+						min-width 130px
+						a
+							display block
+							font-size 14px
+							font-weight bold
+							padding 0 20px
+						a:hover
+							background-color #4d678d
+							color #fff
+				div.nav-buttons
+					display none
+
+
+@media screen and (min-width:768px) and (max-width:980px)
+	.icon-common
+		background url('../images/dida.png') no-repeat
+		background-size 792px 409px
+		display inline-block
+	.header
+		.header-wrap
+			a
+				span.nav-logo
+					.icon-logo
+						width 123px
+						height 30px
+						background-position -472px -357px
+						vertical-align text-bottom
+			a.btn-nav
+				display none
+			.nav-collapse
+				overflow visiable
+				width auto
+				clear none
+				ul.nav-list
+					width 250px
+					float none
+					margin 0 auto
+					.list-link
+						display block
+						float left
+						min-width 60px
+						>a
+							font-size 12px
+							padding 8px 10px
+							line-height 22px
+							display block
+						>a:hover
+							background-color #6686b7
+							color #fff
+
+					.list-register
+						display none
+				.nav-buttons
+					float right
+					.btn
+						display inline-block
+						padding 5px
+						line-height 19px
+						float left
+						margin-top 3px
+						min-width 76px
+						font-size 14px
+					.btn-blue
+						background-color #6686b7
+						background-color linear-gradient(top,#6c8cbc,#5f7fb0)
+						color #fff
+						border-radius 2px
+						-webkit-border-radius 2px
+						-moz-border-radius 2px
+@media screen and (min-width:980px)
+	.icon-common
+		background url('../images/dida.png') no-repeat
+		background-size 792px 409px
+		display inline-block
+	.header
+		.header-wrap
+			a
+				span.nav-logo
+					.icon-logo
+						width 123px
+						height 30px
+						background-position -472px -357px
+						vertical-align text-bottom
+				span.nav-title
+					display inline-block
+					font-size 10px
+					height 36px
+					line-height 45px
+					padding-left 15px
+			a.btn-nav
+				display none
+				float right
+			.nav-collapse
+				ul.nav-list
+					width 650px
+					float none
+					margin 0 auto
+					.list-link
+						display block
+						float left
+						min-width 130px
+						>a
+							font-size 15px
+							padding 8px 10px
+							line-height 19px
+							display block
+					.list-register
+						display none
+				.nav-buttons
+					float right
+					.btn
+						display inline-block
+						padding 5px
+						line-height 19px
+						float left
+						margin-top 3px
+						min-width 76px
+						font-size 14px
+					.btn-blue
+						background-color #6686b7
+						background-color linear-gradient(top,#6c8cbc,#5f7fb0)
+						color #fff
+						border-radius 2px
+						-webkit-border-radius 2px
+						-moz-border-radius 2px
+
+
+
+

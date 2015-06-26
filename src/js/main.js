@@ -1,11 +1,11 @@
-i=0;
+/*i=0;
 function changePic(){
     var li=document.getElementsByTagName('li');
     var b=li.length;
     if(b>0){
         i++;
-        console.log(i)
-        if((b-i)%2==0){
+        console.log(i);
+        if((b-i)%2===0){
             li[b-i].setAttribute('class','odd');
         }
         else{
@@ -19,10 +19,10 @@ function changePic(){
 
 function movePic(e){
     var num=0;
-    if(e.which==1){
+    if(e.which===1){
         var t=setInterval(function(){
             num+=10;
-            /*if(num==1000){
+            if(num==1000){
                 num==0;
                 var q=setInterval(function(){
                     var li=document.getElementsByTagName('li');
@@ -38,7 +38,19 @@ function movePic(e){
                         }
                     }
                 },100)
-            }*/
-        },10)
+            }
+        },10);
     }
 }
+*/
+
+$(function(){
+    $('.icon-toggle').on('click',function(){
+        if($('.nav-collapse').hasClass('in')){
+            $('.nav-collapse').slideUp().removeClass('in');
+        }
+        else{
+            $('.nav-collapse').slideDown().addClass('in');
+        }
+    })
+})
