@@ -71,7 +71,7 @@ gulp.task('scripts', function() {
   return gulp.src('src/js/**/*')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))/*合并所有js到min.js*/
+/* .pipe(concat('main.js'))/*合并所有js到min.js*/
     .pipe(rename({ suffix: '.min' }))/*rename压缩后的文件名*/
     .pipe(uglify())/*执行压缩*/
     .pipe(gulp.dest('src/dist/js'))/*输出压缩后文件位置*/
