@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
 /*    autoprefixer = require('gulp-autoprefixer'),*/
     cache = require('gulp-cache'),
-    browserSync = require('browser-sync'),/*即使刷新*/
+    browserSync = require('browser-sync'),/*即时刷新*/
     runSequence = require('run-sequence'),
     stylus = require('gulp-stylus')
 
